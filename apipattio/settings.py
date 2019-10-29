@@ -25,7 +25,7 @@ SECRET_KEY = '#7@t1=9(6=u=1pm*2xy!r5js37om&=h_c($su$itv!!-b9#usz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['apipattio.herokuapp.com']
 
 
 # Application definition
@@ -82,17 +82,15 @@ WSGI_APPLICATION = 'apipattio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'api_pattio',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS' :{
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
-    }       
-}
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dd82qk1s8fsqcb',
+        'USER': 'adorlgtjkkohsq',
+        'PASSWORD': '26fe11aa543a3f6c9de44feae7d883cc5d97fe113f851dfb5c7d6a75a65d64e7',
+        'HOST': 'ec2-54-225-205-79.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}       
+
 
 
 # Password validation
