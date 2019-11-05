@@ -25,7 +25,8 @@ SECRET_KEY = '#7@t1=9(6=u=1pm*2xy!r5js37om&=h_c($su$itv!!-b9#usz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['apipattio.herokuapp.com']
+# ALLOWED_HOSTS = ['apipattio.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'brand',
     'product',
     'user',
@@ -134,3 +136,11 @@ STATICFILES_DIRS = (BASE_DIR, 'static')
 
 # CORS_ORIGIN_WHITELIST = 'localhost:3000'
 CORS_ORIGIN_ALLOW_ALL = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}

@@ -1,4 +1,6 @@
 from rest_framework import generics
+from rest_framework.authentication import TokenAuthentication
+from rest_framework import permissions
 
 from brand.models import Brand
 from product.models import Product
@@ -8,6 +10,9 @@ from product.api.serializers import ProductSerializer
 class BrandList(generics.ListAPIView):
   queryset = Brand.objects.all()
   serializer_class = BrandSerializer
+  permission_classes =(permissions.IsAuthenticated,)
+  authentication_classes = (TokenAuthentication,)
+
 
 class BrandDetail(generics.RetrieveDestroyAPIView):
   queryset = Brand.objects.all()
