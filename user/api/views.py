@@ -23,6 +23,6 @@ class RegistroUsuario(generics.CreateAPIView):
         user = User.objects.create_user(username,email,password)
         user.save()
         token = Token.objects.create(user=user)
-        data = {'detalle':'Usuario creado con el token:'+token.key}
+        data = {'Token':token.key}
         dump = json.dumps(data)
         return HttpResponse(dump,content_type='application/json')
